@@ -1,24 +1,24 @@
-# One Dimensional Compressible Nozzle Flow Solver
+# One-Dimensional Compressible Nozzle Flow Solver
 
-This project is a MATLAB computational fluid dynamics solver for simulating one dimensional compressible flow through a nozzle. The program models how flow properties change along a variable area nozzle and demonstrates the numerical behavior of accelerating flow in a propulsion relevant geometry.
+A MATLAB computational fluid dynamics solver for simulating 1D compressible flow through a nozzle. The program models how flow properties change along a variable-area nozzle.
 
 ![Cross Section](./Figures/Cross_Section.png)
 
-The solver uses a predictor corrector time marching method to advance the governing equations and evaluate the evolution of flow properties through the nozzle. The project was developed to connect compressible flow theory with practical CFD implementation, with emphasis on conservation form equations, numerical stability, convergence behavior, and nozzle flow physics.
+Using a predictor/corrector time-marching method to advance the governing equations and evaluate the evolution of flow properties through the nozzle. The project was developed to connect compressible flow theory with practical CFD implementation, with emphasis on conservation-form equations, numerical stability, convergence behavior, and nozzle flow physics.
 
 ## Project Objective
 
-The objective of this project was to build a numerical solver capable of modeling one dimensional compressible flow through a nozzle with changing cross sectional area. The program tracks the behavior of flow variables along the nozzle and captures the acceleration of the flow as the area varies.
+The objective of this project was to build a numerical solver capable of modeling 1D compressible flow through a nozzle with a changing cross-sectional area. The program tracks the behavior of flow variables along the nozzle and captures the acceleration of the flow as the area varies.
 
 This type of problem is relevant to propulsion, gas dynamics, and aerospace CFD because nozzles are used to convert thermal and pressure energy into directed kinetic energy. Even in one dimension, nozzle flow provides a useful test case for understanding compressibility, conservation laws, numerical marching schemes, and the connection between analytical gas dynamics and computational simulation.
 
 ## Methodology
 
-The nozzle flow field was discretized along a one dimensional grid. Flow properties were calculated at each grid location and advanced using a predictor corrector approach. This method estimates the next state of the solution with a predictor step, then refines that estimate with a corrector step.
+The nozzle flow field was discretized along a one-dimensional grid. Flow properties were calculated at each grid location and advanced using a predictor/corrector approach. This method estimates the next state of the solution with a predictor step, then refines that estimate with a corrector step.
 
 The solver tracks the development of the flow field over time and evaluates how the nozzle geometry affects the local flow solution. By formulating the equations in conservation form, the program emphasizes physically meaningful transport of mass, momentum, and energy through the domain.
 
-This cross section is included to define the nozzle geometry used by the solver. The changing area of the nozzle drives the acceleration of the flow and provides the physical basis for evaluating how velocity, pressure, and residual behavior respond to the geometry.
+This cross-section is included to define the nozzle geometry used by the solver. The changing area of the nozzle drives the acceleration of the flow and provides the physical basis for evaluating how velocity, pressure, and residual behavior respond to the geometry.
 
 ## Governing Correction Equations
 
@@ -207,6 +207,6 @@ This plot is included to compare residual behavior across a broader range of rel
 
 ### Convergence Behavior
 
-This plot is included to show the calculated values approaching their final converged values. It demonstrates that the iterative correction process is moving toward a stable solution and provides evidence that the predictor corrector method is producing consistent flow results.
+This plot is included to show the calculated values approaching their final converged values. It demonstrates that the iterative correction process is moving toward a stable solution and provides evidence that the predictor/corrector method is producing consistent flow results.
 
 ![Converging Values](./Figures/Converging_Values.jpg)
