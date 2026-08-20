@@ -1,6 +1,6 @@
 # One-Dimensional Compressible Nozzle Flow Solver
 
-A MATLAB computational fluid dynamics solver for simulating 1D compressible flow through a nozzle. The program models how flow properties change along a variable-area nozzle.
+A MATLAB computational fluid dynamics solver for simulating 1D compressible flow through a nozzle. The program models how flow properties change along a variable-area nozzle shown below:
 
 ![Cross Section](./Figures/Cross_Section.png)
 
