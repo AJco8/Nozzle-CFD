@@ -13,6 +13,7 @@ global u_Ai u_Bi P_2i
 u_Ai = 5/3;
 u_Bi = 5;
 P_2i = 25;
+
 %% Relaxation Searches
 
 N=50;
@@ -30,32 +31,38 @@ writematrix(a_p_R_array,"Search.xlsx","Sheet","Pressure");
 %%
 figure(Theme="light",Position=[0 0 600 400]);
 subplot(2,1,1)
+hold on
 title("Residuals from Relaxation Parameters")
 plot(iter,a_u_R_array);
 ylabel("|R|")
 xlabel("Iteration")
 legend("\alpha_u = "+a_range')
+hold off
 subplot(2,1,2)
 dR = diff(a_u_R_array(:,2:end),1,2);
 plot(iter(2:end-1),dR)
-title("Change of Residuals over ")
+title("Change of Residual over Iterations")
 ylabel("\partial|R|/\partiali")
 xlabel("Iteration")
 saveas(gcf,"./Figures/Residual_Derivative.jpg")
 %%
 figure(Theme="light",Position=[0 0 600 200]);
 subplot(1,2,1)
+hold on
 title("Velocity Relaxation Range")
 dR_ave = mean(diff(a_u_R_array(:,2:end),1,2),2);
 plot(a_range,dR_ave)
 ylabel("(\partial|R|/\partiali)_{ave}")
 xlabel("\alpha_u")
+hold off
 subplot(1,2,2)
+hold on
 title("Pressure Relaxation Range")
 dR_ave = mean(diff(a_p_R_array(:,2:end),1,2),2);
 plot(a_range,dR_ave)
 ylabel("(\partial|R|/\partiali)_{ave}")
 xlabel("\alpha_P")
+hold off
 saveas(gcf,"./Figures/Relaxation_Range.jpg")
 %%
 %Velocity relaxation factor
